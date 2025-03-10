@@ -2,8 +2,10 @@ package org.example.informationservice.Model.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -15,6 +17,8 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = lombok.AccessLevel.PRIVATE)
+@Builder
 
 public class Item {
 
@@ -49,5 +53,11 @@ public class Item {
     @Column(name = "UPDATED_TIME")
     @UpdateTimestamp
     LocalDateTime updatedTime;
+
+    @Column(name = "CREATED_USER")
+    Long createdUser;
+
+    @Column(name = "UPDATED_USER")
+    Long updatedUser;
 
 }
