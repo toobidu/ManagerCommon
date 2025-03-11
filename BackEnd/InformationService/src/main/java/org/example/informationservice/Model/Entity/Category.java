@@ -48,6 +48,9 @@ public class Category {
     @Column(name = "CREATED_USER")
     Long createdUser;
 
+    @Column(name = "UPDATED_USER")
+    Long updatedUser;
+
     @OneToMany(mappedBy = "CATEGORY")
     List<Item> items;
 
